@@ -1,0 +1,1388 @@
+/*------------------------------------*\
+  #FONTS
+\*------------------------------------*/
+
+@font-face {
+    font-family: 'Trade Gothic-R';
+    font-weight: 400;
+    src: url('../fonts/TradeGothicLT.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Trade Gothic-L';
+    font-weight: 200;
+    src: url('../fonts/TradeGothicLTLight.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Trade Gothic-B';
+    font-weight: 700;
+    src: url('../fonts/Trade\ Gothic\ LT\ Bold.ttf') format('truetype');
+}
+
+/*------------------------------------*\
+  #GENERIC
+\*------------------------------------*/
+
+/*
+    Generic: Page
+    ---
+    Global page styles + universal box-sizing:
+*/
+
+html {
+    font-size: 18px;
+    line-height: 1.5;
+    font-family: 'Trade Gothic-R', Helvetica, arial, sans-serif;
+    color: #0f1021;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Customize the background color to match your design.
+ */
+
+::selection {
+    background: #3385ff;
+    color: white;
+    text-shadow: none;
+}
+
+/*------------------------------------*\
+  #Elements
+\*------------------------------------*/
+
+/*
+    Elements: Images
+    ---
+    Default markup for images to make them responsive
+*/
+
+img {
+    max-width: 100%;
+    vertical-align: top;
+}
+
+/*
+    Elements: typography
+    ---
+    Default markup for typographic elements
+*/
+
+h1,
+h2,
+h3 {
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 36px;
+    line-height: 48px;
+    margin: 0 0 24px;
+}
+
+h2 {
+    font-size: 32px;
+    line-height: 40px;
+    margin: 0 0 24px;
+}
+
+h3 {
+    font-size: 26px;
+    line-height: 32px;
+    margin: 0 0 24px;
+}
+
+h4,
+h5,
+h6 {
+    font-size: 20px;
+    line-height: 24px;
+    margin: 0 0 24px;
+}
+
+p,
+ol,
+ul,
+dl,
+table,
+address,
+figure {
+    margin: 0 0 24px;
+}
+
+ul,
+ol {
+    padding-left: 24px;
+}
+
+li ul,
+li ol {
+    margin-bottom: 0;
+}
+
+blockquote {
+    font-style: normal;
+    font-size: 23px;
+    line-height: 32px;
+    margin: 0 0 24px;
+}
+
+blockquote * {
+    font-size: inherit;
+    line-height: inherit;
+}
+
+figcaption {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    margin-top: 8px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: LightGrey;
+    margin: 0 0 24px;
+}
+
+a {
+    color: #3385ff;
+    transition: all 0.1s ease-in-out;
+}
+
+a:visited,
+a:active {
+    color: #4f95ff;
+}
+
+a:hover,
+a:focus {
+    color: #4f95ff;
+}
+
+/*------------------------------------*\
+  #OBJECTS
+\*------------------------------------*/
+
+/*
+    Objects: Row
+    ---
+    Creates a horizontal row that stretches the viewport and adds padding around children
+*/
+
+.o-row {
+    position: relative;
+    padding: 24px 24px 0;
+    display: flow-root;
+}
+
+/* color modifiers */
+
+.o-row--primary-x-light {
+    background-color: #f2faff;
+}
+
+.o-row--neutral-xx-dark {
+    color: #fff;
+    background: #20223a;
+}
+
+/* intro needs a larger z-index to pull the image over the next row */
+
+.o-row--intro {
+    z-index: 10;
+}
+
+/* size modifiers */
+
+.o-row--lg {
+    padding-top: 48px;
+    padding-bottom: 24px;
+}
+
+.o-row--intro {
+    padding-top: 48px;
+    padding-bottom: 48px;
+}
+
+.o-row--xl {
+    padding-top: 72px;
+    padding-bottom: 48px;
+}
+
+@media (min-width: 768px) {
+    .o-row {
+        padding-left: 48px;
+        padding-right: 48px;
+    }
+
+    .o-row--md {
+        padding-top: 48px;
+        padding-bottom: 24px;
+    }
+
+    .o-row--lg {
+        padding-top: 72px;
+        padding-bottom: 48px;
+    }
+}
+
+@media (min-width: 992px) {
+    .o-row--intro {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .o-row--xl {
+        padding-top: 96px;
+        padding-bottom: 72px;
+    }
+}
+
+/*
+    Objects: Container
+    ---
+    Creates a horizontal container that sets de global max-width
+*/
+
+.o-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 80em; /* 90 * 16px = 1440px */
+}
+
+/*
+    Objects: section
+    ---
+    Creates vertical whitespace between adjacent sections inside a row
+*/
+
+.o-section {
+    display: flow-root;
+}
+
+.o-section + .o-section {
+    margin-top: 24px;
+}
+
+@media (min-width: 768px) {
+    .o-section--lg + .o-section--lg,
+    .o-section--xl + .o-section--xl {
+        margin-top: 48px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .o-section--xl + .o-section--xl {
+        margin-top: 72px;
+    }
+}
+
+/*
+    Objects: Layout
+    ---
+    The layout object provides us with a column-style layout system. This object
+    contains the basic structural elements, but classes should be complemented
+    with width utilities
+*/
+
+.o-layout {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.o-layout__item {
+    flex-basis: 100%;
+}
+
+/* gutter modifiers, these affect o-layout__item too */
+
+.o-layout--gutter {
+    margin: 0 -12px;
+}
+
+.o-layout--gutter > .o-layout__item {
+    padding: 0 12px;
+}
+
+.o-layout--gutter-sm {
+    margin: 0 -6px;
+}
+
+.o-layout--gutter-sm > .o-layout__item {
+    padding: 0 6px;
+}
+
+.o-layout--gutter-lg {
+    margin: 0 -24px;
+}
+
+.o-layout--gutter-lg > .o-layout__item {
+    padding: 0 24px;
+}
+
+.o-layout--gutter-xl {
+    margin: 0 -48px;
+}
+
+.o-layout--gutter-xl > .o-layout__item {
+    padding: 0 48px;
+}
+
+/* reverse horizontal row modifier */
+
+.o-layout--row-reverse {
+    flex-direction: row-reverse;
+}
+
+/* Horizontal alignment modifiers*/
+
+.o-layout--justify-start {
+    justify-content: flex-start;
+}
+
+.o-layout--justify-end {
+    justify-content: flex-end;
+}
+
+.o-layout--justify-center {
+    justify-content: center;
+}
+
+.o-layout--justify-space-around {
+    justify-content: space-around;
+}
+
+.o-layout--justify-space-evenly {
+    justify-content: space-evenly;
+}
+
+.o-layout--justify-space-between {
+    justify-content: space-between;
+}
+
+/* Vertical alignment modifiers */
+
+.o-layout--align-start {
+    align-items: flex-start;
+}
+
+.o-layout--align-end {
+    align-items: flex-end;
+}
+
+.o-layout--align-center {
+    align-items: center;
+}
+
+.o-layout--align-baseline {
+    align-items: baseline;
+}
+
+/* Vertical alignment modifiers that only work if there is one than one flex item */
+
+.o-layout--align-content-start {
+    align-content: start;
+}
+
+.o-layout--align-content-end {
+    align-content: end;
+}
+
+.o-layout--align-content-center {
+    align-content: center;
+}
+
+.o-layout--align-content-space-around {
+    align-content: space-around;
+}
+
+.o-layout--align-content-space-between {
+    align-content: space-between;
+}
+
+/*
+    Objects: List
+    ---
+    Small reusable object to remove default list styling from lists
+*/
+
+.o-list {
+    list-style: none;
+    padding: 0;
+}
+
+/*
+    Object: Button reset
+    ---
+    Small button reset object
+*/
+
+.o-button-reset {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+
+    /* inherit font & color from ancestor */
+    color: inherit;
+    font: inherit;
+
+    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+    line-height: normal;
+
+    /* Corrects font smoothing for webkit */
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+
+    /* Corrects inability to style clickable `input` types in iOS */
+    -webkit-appearance: none;
+}
+
+/*------------------------------------*\
+  #COMPONENTS
+\*------------------------------------*/
+
+/*
+    Component: Logo
+    ---
+    Website main logo
+*/
+
+.c-logo {
+    height: 24px;
+    display: flex;
+    align-items: center;
+    color: #3385ff;
+}
+
+.c-logo__symbol {
+    height: 100%;
+}
+
+/*
+    Component: header
+    ---
+    Main header of the website
+*/
+
+.c-header {
+    display: block;
+}
+.c-phone-menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.c-header__nav {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: opacity 600ms, visibility 600ms;
+    transition: opacity 600ms, visibility 600ms;
+}
+.c-header__nav-visible {
+    visibility: visible;
+    opacity: 1;
+}
+@media (min-width: 576px) {
+    .c-header__nav {
+        display: block;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .c-header__nav {
+        /* solution 1 */
+        /* margin-left: auto; */
+
+        /* solution 2 */
+        display: flex;
+        flex-grow: 1;
+        justify-content: flex-end;
+    }
+    .c-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .c-hamburger {
+        display: none;
+    }
+}
+.c-nav__item .active {
+    color: #3385ff;
+}
+/*
+    Component: Nav
+    ---
+    Main navigation of the site
+*/
+
+.c-nav {
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.c-nav__link {
+    text-decoration: none;
+    font-weight: 600;
+    display: block;
+    padding: 8px 0;
+}
+
+.c-nav__link,
+.c-nav__link:visited,
+.c-nav__link:active {
+    color: #4b4e6b;
+}
+
+.c-nav__link:hover,
+.c-nav__link:focus {
+    color: #3385ff;
+}
+
+@media (min-width: 576px) {
+    .c-nav__list {
+        display: flex;
+    }
+    .c-nav__link {
+        padding: 8px 0px 8px 20px;
+    }
+}
+
+/*
+    Component: Lead
+    ---
+    Lead type treatments to style everything that differs from standard typography elements
+*/
+
+.c-lead {
+    position: relative;
+}
+
+.c-lead--md {
+    font-size: 18px;
+    line-height: 32px;
+}
+
+.c-lead--lg {
+    font-size: 20px;
+    line-height: 32px;
+}
+
+.c-lead--xl {
+    font-size: 32px;
+    line-height: 40px;
+}
+
+@media (min-width: 768px) {
+    .c-lead--xl {
+        font-size: 41px;
+        line-height: 48px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .c-lead--xl {
+        font-size: 52px;
+        line-height: 64px;
+    }
+}
+
+/*
+    Component: Intro
+    ---
+    Intro part on the homepage
+*/
+
+.c-intro {
+    position: relative;
+}
+
+@media (max-width: 991px) {
+    .c-intro__figure {
+        display: none;
+    }
+}
+
+@media (min-width: 1200px) {
+    .c-intro {
+        margin-bottom: -96px;
+    }
+
+    .c-intro__body {
+        position: relative;
+        top: -48px;
+    }
+}
+
+/*
+    Component: CTA link
+    ---
+    Small cta link with custom animation
+*/
+
+.c-link-cta {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 4px;
+    box-shadow: inset 0 0 0 1px #2e77e6;
+    background: #3385ff linear-gradient(to bottom, #4f95ff, #2e77e6);
+}
+
+.c-link-cta,
+.c-link-cta:visited,
+.c-link-cta:active {
+    color: #fff;
+}
+
+.c-link-cta:hover,
+.c-link-cta:focus {
+    color: #fff;
+    background: #4f95ff;
+}
+
+.c-link-cta:active {
+    background-color: #3385ff;
+}
+
+.c-link-cta--lg {
+    font-size: 16px;
+    padding: 16px 32px;
+}
+
+/*
+    Component: Stat
+    ---
+    Component to visualise statistics
+*/
+
+.c-stats {
+    margin-bottom: -24px;
+}
+
+.c-stat {
+    color: #3385ff;
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.c-stat__title {
+    margin-bottom: 4px;
+    font-size: 41px;
+    line-height: 48px;
+}
+
+.c-stat__what {
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+/*
+    Component: keep center
+    ---
+    Keep stats center
+*/
+.c-keep-center {
+    align-items: center;
+}
+/*
+    Component: Progress bar
+    ---
+    Progress bar over algemene status
+*/
+.c-progressbar {
+    width: 300px;
+    height: 150px;
+    margin: auto;
+}
+@media (min-width: 576px) {
+    .c-progressbar {
+        width: 400px;
+        height: 200px;
+        margin: auto;
+    }
+}
+
+/*
+    Component: Button group
+    ---
+    Progress bar over algemene status
+*/
+.c-btn-group {
+    display: inline;
+}
+.c-btn-group button {
+    background-color: white;
+    border: 0px solid #3385ff;
+    color: #20223a;
+    padding: 10px 20px;
+    cursor: pointer;
+    float: left;
+}
+.c-btn-group button:not(:last-child) {
+    border-right: none;
+}
+.c-btn-group:after {
+    content: '';
+    clear: both;
+    display: table;
+}
+.c-btn-group button:hover {
+    border-bottom: 2px solid #3385ff;
+    cursor: pointer;
+}
+.c-btn-active {
+    border-bottom: 2px solid #3385ff !important;
+}
+/*
+    Component: Chart card
+    ---
+    Card with mini chart and realtime data
+*/
+.c-chart-card {
+    margin: auto;
+    transition: ease 0.5s box-shadow;
+    box-shadow: 0 0.5px 1px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.c-chart-card:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+}
+.c-chart-card-waarde {
+    font-weight: 700;
+    font-size: 25px;
+}
+.c-chart-card div {
+    padding: 8px;
+}
+.myChart {
+    display: none !important;
+}
+@media (min-width: 576px) {
+    .myChart {
+        display: block !important;
+    }
+}
+
+/*
+    Component: Slider btn
+    ---
+    Slider to change state of acuator
+*/
+.c-switch,
+.c-switch-rgb {
+    display: flex;
+    height: 20px;
+    position: relative;
+    margin-left: auto;
+    width: 40px;
+    margin-top: -16px;
+}
+
+.c-switch input,
+.c-switch-rgb input {
+    display: none;
+}
+
+.c-slider,
+.c-slider-rgb {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: 0.4s;
+}
+
+.c-slider:before,
+.c-slider-rgb:before {
+    background-color: #7d7d7d;
+    bottom: -2px;
+    content: '';
+    height: 24px;
+    left: -4px;
+    position: absolute;
+    transition: 0.4s;
+    width: 24px;
+}
+.c-slider-on,
+.c-slider-on-rgb {
+    background-color: #9cc8ff;
+}
+.c-slider-on:before,
+.c-slider-on-rgb:before {
+    background-color: #3385ff;
+    transform: translateX(24px);
+}
+
+.c-slider.c-round,
+.c-slider-rgb.c-round-rgb {
+    border-radius: 34px;
+}
+
+.c-slider.c-round:before,
+.c-slider-rgb.c-round-rgb:before {
+    border-radius: 50%;
+}
+/*
+    Component: Settings
+    ---
+*/
+.c-settings-block {
+    display: flex;
+    flex-grow: 1;
+}
+.c-settings-para {
+    margin-left: 32px;
+}
+.c-settings {
+    margin: auto;
+}
+.c-settings-distance {
+    margin-top: 20vh;
+}
+@media (min-width: 576px) {
+    .c-settings-distance {
+        margin-top: 25vh;
+    }
+}
+/*
+    Component: info
+    ---
+    Settings voor de info icons
+*/
+
+.c-info {
+    color: #3385ff;
+}
+/*
+    Component: power button
+    ---
+    Settings voor de power button
+*/
+.c-power-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #3385ff; /*IconColor*/
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    font-size: 40px;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    overflow: hidden;
+    font-weight: bold;
+    background-image: -webkit-linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
+    background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
+    box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
+    border-bottom: solid 2px #b5b5b5;
+}
+.c-power-settings {
+    width: 80px;
+}
+.c-power-btn .fa {
+    line-height: 80px;
+}
+
+/*
+    Component: historie cards
+    ---
+    Kaartjes om geschiedenis te tonen op phone
+*/
+.c-historie-card {
+    border: 1px solid rgba(156, 200, 255, 0.5);
+    border-radius: 2px;
+    position: relative;
+    width: auto;
+    color: #4b4e6b;
+    height: 60px;
+    margin-bottom: 16px;
+    padding-bottom: 64px;
+}
+.c-historie-datumNr {
+    display: inline;
+    position: absolute;
+    font-weight: 800;
+    font-size: 60px;
+    top: 8px;
+    left: 16px;
+}
+.c-historie-datum {
+    display: inline;
+    position: absolute;
+    margin-right: 20px;
+    font-size: 20px;
+    left: 95px;
+}
+.c-historie-meting {
+    display: inline;
+    position: absolute;
+    top: 34px;
+    left: 95px;
+}
+.c-historie-metingNaam {
+    display: inline;
+    top: 34px;
+    left: 95px;
+}
+.c-historie-metingNr {
+    display: inline;
+    top: 34px;
+    margin-left: 8px;
+}
+@media (min-width: 576px) {
+    .c-historie-cards {
+        display: none;
+    }
+}
+/*
+    Component: tips
+    ---
+    Tips voor betere luchtkwaliteit
+*/
+.c-tip-section p {
+    position: absolute;
+    transition: opacity 0.5s ease-in;
+}
+
+.c-tip-section p + p {
+    opacity: 0;
+}
+.c-tip-icon {
+    max-width: 24px;
+}
+/* .c-tip-section {
+    max-width: 300px !important;
+} */
+/*
+    Component: Data loading
+    ---
+    Maakt de gebruiker duidelijk dat er nieuwe data wordt opgehaald
+*/
+.c-dataLoading {
+    opacity: 0;
+    display: block;
+    width: 186px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 24px;
+    animation: fadeIn 1s infinite alternate;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+}
+/*
+    Component: Datepicker
+    ---
+    Datepicker voor ophalen historiek
+*/
+
+/*------------------------------------*\
+  #UTILITIES
+\*------------------------------------*/
+
+/*
+    Utilities: color
+    ---
+    Utility classes to put specific colors onto elements
+*/
+
+.u-color-neutral-base {
+    color: #9c9eb8;
+}
+
+.u-color-neutral-dark {
+    color: #83859e;
+}
+
+/*
+    Utilities: spacing
+    ---
+    Utility classes to put specific margins and paddings onto elements
+*/
+
+.u-pt-clear {
+    padding-top: 0 !important;
+}
+
+.u-mb-clear {
+    margin-bottom: 0 !important;
+}
+
+.u-mb-xs {
+    margin-bottom: 4px !important;
+}
+
+.u-mb-sm {
+    margin-bottom: 8px !important;
+}
+
+.u-mb-md {
+    margin-bottom: 16px !important;
+}
+
+.u-mb-lg {
+    margin-bottom: 48px !important;
+}
+
+.u-mb-xl {
+    margin-bottom: 116px !important;
+}
+
+/*
+    Utilities: max-width
+    ---
+    Utility classes to put specific max widths onto elements
+*/
+
+.u-max-width-xs {
+    max-width: 300px !important;
+}
+
+.u-max-width-sm {
+    max-width: 400px !important;
+}
+
+.u-max-width-md {
+    max-width: 50em !important;
+}
+
+.u-max-width-lg {
+    max-width: 63.5em !important;
+}
+
+.u-max-width-none {
+    max-width: none !important;
+}
+
+/*
+    Utility: Flex
+    ---
+    Utility classes to put specific flex properties onto elements
+    Will be mostly used on o-layout__item
+*/
+
+.u-flex-basis-auto {
+    flex-basis: auto !important;
+}
+
+.u-flex-grow-1 {
+    flex-grow: 1 !important;
+}
+
+.u-1-of-2 {
+    flex-basis: calc(100% / 2) !important;
+}
+
+.u-1-of-3 {
+    flex-basis: calc(100% / 3) !important;
+}
+
+.u-2-of-3 {
+    flex-basis: calc(100% / 3 * 2) !important;
+}
+
+.u-1-of-4 {
+    flex-basis: calc(100% / 4) !important;
+}
+
+.u-3-of-4 {
+    flex-basis: calc(100% / 4 * 3) !important;
+}
+
+.u-1-of-5 {
+    flex-basis: calc(100% / 5) !important;
+}
+
+.u-2-of-5 {
+    flex-basis: calc(100% / 5 * 2) !important;
+}
+
+.u-3-of-5 {
+    flex-basis: calc(100% / 5 * 3) !important;
+}
+
+.u-4-of-5 {
+    flex-basis: calc(100% / 5 * 4) !important;
+}
+
+.u-1-of-6 {
+    flex-basis: calc(100% / 6) !important;
+}
+
+.u-5-of-6 {
+    flex-basis: calc(100% / 6 * 5) !important;
+}
+
+@media (min-width: 576px) {
+    .u-1-of-2-bp1 {
+        flex-basis: calc(100% / 2) !important;
+    }
+    .u-1-of-3-bp1 {
+        flex-basis: calc(100% / 3) !important;
+    }
+    .u-2-of-3-bp1 {
+        flex-basis: calc(100% / 3 * 2) !important;
+    }
+    .u-1-of-4-bp1 {
+        flex-basis: calc(100% / 4) !important;
+    }
+    .u-3-of-4-bp1 {
+        flex-basis: calc(100% / 4 * 3) !important;
+    }
+    .u-1-of-5-bp1 {
+        flex-basis: calc(100% / 5) !important;
+    }
+    .u-2-of-5-bp1 {
+        flex-basis: calc(100% / 5 * 2) !important;
+    }
+    .u-3-of-5-bp1 {
+        flex-basis: calc(100% / 5 * 3) !important;
+    }
+    .u-4-of-5-bp1 {
+        flex-basis: calc(100% / 5 * 4) !important;
+    }
+    .u-1-of-6-bp1 {
+        flex-basis: calc(100% / 6) !important;
+    }
+    .u-5-of-6-bp1 {
+        flex-basis: calc(100% / 6 * 5) !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .u-1-of-2-bp2 {
+        flex-basis: calc(100% / 2) !important;
+    }
+    .u-1-of-3-bp2 {
+        flex-basis: calc(100% / 3) !important;
+    }
+    .u-2-of-3-bp2 {
+        flex-basis: calc(100% / 3 * 2) !important;
+    }
+    .u-1-of-4-bp2 {
+        flex-basis: calc(100% / 4) !important;
+    }
+    .u-3-of-4-bp2 {
+        flex-basis: calc(100% / 4 * 3) !important;
+    }
+    .u-1-of-5-bp2 {
+        flex-basis: calc(100% / 5) !important;
+    }
+    .u-2-of-5-bp2 {
+        flex-basis: calc(100% / 5 * 2) !important;
+    }
+    .u-3-of-5-bp2 {
+        flex-basis: calc(100% / 5 * 3) !important;
+    }
+    .u-4-of-5-bp2 {
+        flex-basis: calc(100% / 5 * 4) !important;
+    }
+    .u-1-of-6-bp2 {
+        flex-basis: calc(100% / 6) !important;
+    }
+    .u-5-of-6-bp2 {
+        flex-basis: calc(100% / 6 * 5) !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .u-1-of-2-bp3 {
+        flex-basis: calc(100% / 2) !important;
+    }
+    .u-1-of-3-bp3 {
+        flex-basis: calc(100% / 3) !important;
+    }
+    .u-2-of-3-bp3 {
+        flex-basis: calc(100% / 3 * 2) !important;
+    }
+    .u-1-of-4-bp3 {
+        flex-basis: calc(100% / 4) !important;
+    }
+    .u-3-of-4-bp3 {
+        flex-basis: calc(100% / 4 * 3) !important;
+    }
+    .u-1-of-5-bp3 {
+        flex-basis: calc(100% / 5) !important;
+    }
+    .u-2-of-5-bp3 {
+        flex-basis: calc(100% / 5 * 2) !important;
+    }
+    .u-3-of-5-bp3 {
+        flex-basis: calc(100% / 5 * 3) !important;
+    }
+    .u-4-of-5-bp3 {
+        flex-basis: calc(100% / 5 * 4) !important;
+    }
+    .u-1-of-6-bp3 {
+        flex-basis: calc(100% / 6) !important;
+    }
+    .u-5-of-6-bp3 {
+        flex-basis: calc(100% / 6 * 5) !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .u-1-of-2-bp4 {
+        flex-basis: calc(100% / 2) !important;
+    }
+    .u-1-of-3-bp4 {
+        flex-basis: calc(100% / 3) !important;
+    }
+    .u-2-of-3-bp4 {
+        flex-basis: calc(100% / 3 * 2) !important;
+    }
+    .u-1-of-4-bp4 {
+        flex-basis: calc(100% / 4) !important;
+    }
+    .u-3-of-4-bp4 {
+        flex-basis: calc(100% / 4 * 3) !important;
+    }
+    .u-1-of-5-bp4 {
+        flex-basis: calc(100% / 5) !important;
+    }
+    .u-2-of-5-bp4 {
+        flex-basis: calc(100% / 5 * 2) !important;
+    }
+    .u-3-of-5-bp4 {
+        flex-basis: calc(100% / 5 * 3) !important;
+    }
+    .u-4-of-5-bp4 {
+        flex-basis: calc(100% / 5 * 4) !important;
+    }
+    .u-1-of-6-bp4 {
+        flex-basis: calc(100% / 6) !important;
+    }
+    .u-5-of-6-bp4 {
+        flex-basis: calc(100% / 6 * 5) !important;
+    }
+}
+
+/*------------------------------------*\
+  #MEDIA
+\*------------------------------------*/
+
+/*
+    Media Queries
+    ---
+    EXAMPLE Media Queries for Responsive Design.
+    These examples override the primary ('mobile first') styles.
+    USE THEM INLINE!
+*/
+
+/* Extra small devices (portrait phones, less than 576px)
+   No media query since this is the default in mobile first design
+*/
+
+/* Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {}
+*/
+
+/* Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {}
+*/
+
+/* Large devices (landscape tablets, desktops, 992px and up)
+@media (min-width: 992px) {}
+*/
+
+/* Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {}
+*/
+
+/*
+    Print styles.
+    ---
+    Inlined to avoid the additional HTTP request:
+    http://www.phpied.com/delay-loading-your-print-css/
+*/
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+    a[href]:after {
+        content: ' (' attr(href) ')';
+    }
+    abbr[title]:after {
+        content: ' (' attr(title) ')';
+    }
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+    a[href^='#']:after,
+    a[href^='javascript:']:after {
+        content: '';
+    }
+    pre {
+        white-space: pre-wrap !important;
+    }
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+    thead {
+        display: table-header-group;
+    }
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

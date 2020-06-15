@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <title>Smart Air</title>
+        <meta name="description" content="tdis is my HTML5 boilerplate" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+        <link rel="manifest" href="site.webmanifest" />
+        <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5" />
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"
+            integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I="
+            crossorigin="anonymous"
+        ></script>
+        <script src="script/dataHandler.js"></script>
+        <script src="script/app.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+        <meta name="msapplication-TileColor" content="#2b5797" />
+        <meta name="tdeme-color" content="#ffffff" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <script src="https://kit.fontawesome.com/47393d3828.js" crossorigin="anonymous"></script>
+        <!-- JavaScript -->
+        <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+        <!-- CSS -->
+        <link
+            rel="stylesheet"
+            href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"
+        />
+        <!-- Default theme -->
+        <link
+            rel="stylesheet"
+            href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"
+        />
+
+        <link rel="stylesheet" href="style/normalize.css" />
+        <link rel="stylesheet" href="style/screen.css" />
+    </head>
+    <body>
+        <header class="o-row u-mb-lg">
+            <div class="o-container js-settings">
+                <div class="c-header">
+                    <div class="c-phone-menu">
+                        <div class="c-header__logo">
+                            <h1 class="c-logo">
+                                Smart Air
+                            </h1>
+                        </div>
+                        <div data-toggle="0" class="c-hamburger js-hamburger">
+                            <span class="material-icons js-menu-icon">
+                                menu
+                            </span>
+                        </div>
+                    </div>
+                    <div class="c-header__nav">
+                        <nav class="c-nav">
+                            <ul class="o-list c-nav__list">
+                                <li class="c-nav__item">
+                                    <a href="/index.html" class="c-nav__link">Home</a>
+                                </li>
+                                <li class="c-nav__item">
+                                    <a href="/settings.html" class="c-nav__link active">Settings</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="o-row c-settings-distance">
+            <div class="o-container">
+                <div class="o-layout u-max-width-xs o-layout--align-center c-settings">
+                    <div class="o-layout__item u-5-of-6 c-settings-block">
+                        <span class="material-icons c-info">
+                            toys
+                        </span>
+
+                        <p class="c-settings-para">Ventilator</p>
+                    </div>
+                    <div class="o-layout__item u-1-of-6">
+                        <label class="c-switch" for="checkbox">
+                            <input
+                                type="checkbox"
+                                id="checkbox"
+                                class="c-fan-btn js-fan-btn"
+                                data-acuator="FAN"
+                                value="0"
+                            />
+                            <div class="c-slider c-round"></div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="o-row">
+            <div class="o-container">
+                <div
+                    class="o-layout u-max-width-xs o-layout--align-center o-layout--align-center c-settings u-mb-xl"
+                >
+                    <div class="o-layout__item u-5-of-6 c-settings-block">
+                        <span class="material-icons c-info">
+                            highlight
+                        </span>
+                        <p class="c-settings-para">Verlichting</p>
+                    </div>
+                    <div class="o-layout__item u-1-of-6">
+                        <label class="c-switch-rgb" for="checkbox-rgb">
+                            <input
+                                type="checkbox"
+                                id="checkbox-rgb"
+                                class="c-rgb-btn js-rgb-btn"
+                                data-acuator-RGB="RGB"
+                                value="OFF"
+                            />
+                            <div class="c-slider-rgb c-round-rgb"></div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="o-row">
+            <div class="o-container">
+                <div
+                    class="o-layout o-layout--align-center o-layout--align-center c-settings c-power-settings"
+                >
+                    <div class="o-layout__item c-settings-block">
+                        <a href="#" class="c-power-btn js-power-btn">
+                            <i class="fa fa-power-off"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
